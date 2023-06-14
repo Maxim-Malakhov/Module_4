@@ -5,8 +5,6 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-# Create your models here.
-
 class Advertisement(models.Model):
     title = models.CharField("заголовок", max_length=128)
     description = models.TextField("описание")
@@ -15,7 +13,7 @@ class Advertisement(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User, verbose_name="пользователь", on_delete=models.CASCADE)
-    image = models.ImageField("изображение", upload_to='advertisements/')
+    image = models.ImageField("изображение", upload_to='advertisements/', blank=True)
 
     @admin.display(description="Дата создания")
     def created_date(self):
