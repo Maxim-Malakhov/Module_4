@@ -1,50 +1,23 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>My first HTML page</title>
+        <title>Очередная форма</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://education.maximumtest.ru/favicons/favicon-32x32.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
     </head>
     <body>
-        <input type="button" value="Показать спойлер" onclick="return change(this);" />
-        <script type="text/javascript">
-        function change(elem)  {
-            if (elem.value == "Показать спойлер")
-                elem.value = "Попробуйте навести курсор на изображение внизу страницы! ;P";
-            else
-                elem.value = "Показать спойлер";
-        }
-        </script>
-        <div class="Headers">
-            <!-- Недавно начал изучать Java, они с JavaScript очень похожи! -->
-            <script>
-            for (let i = 1; i < 6+1; i++) {
-                let element = document.createElement('h'+i);
-                const text = document.createTextNode(`Заголовок ${i} уровня`);
-                element.appendChild(text);
-                document.getElementsByClassName("Headers")[0].appendChild(element);
-            }
+        <form action>
+            <!-- Я уже говорил, что имел дело с Java, и что с JavaScript они очень похожи... -->
+            <script type="text/javascript">
+                for (let type of ["text", "email", "tel", "url", "password", "number", "search", "datetime-local", "date", "month", "week", "time", "range", "radio", "checkbox", "color", "file", "image", "submit", "reset", "button", "hidden"]) {
+                    document.body.children[0].append(
+                        Object.assign(document.createElement('label'), {htmlFor: type, textContent: type+': '}),
+                        Object.assign(document.createElement('input'), {id: type, type: type}),
+                        document.createElement('br')
+                    )
+                }
             </script>
-        </div>
-        <p> Lorem ipsum dlior sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dliore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dlior in reprehenderit in vliuptate velit esse cillum dliore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mlilit anim id est laborum.</p>
-        <ul>
-            <li>Python</li>
-            <li>SQL</li>
-            <li>HTML&amp;CSS</li>
-        </ul>
-        <ol>
-            <li>Java(Script)</li>
-            <li>C#</li>
-            <li>Assembler</li>
-        </ol>
-        <center>
-            <p class="Advertisement">
-                <i>Здесь могла быть Ваша реклама!</i>
-            </p>
-            <audio id="music" src="./music.mp3" type="audio/mpeg" autoplay loop></audio>
-            <img class="chip" src="chip.gif" onmouseover="document.getElementById('music').play(); document.getElementById('music').volume=1" onmouseout="document.getElementById('music').volume=0">
-        </center>
-        <a href="https://github.com/Maxim-Malakhov">Реклама</a>
+        </form>
     </body>
 </html>
