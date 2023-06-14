@@ -1,0 +1,36 @@
+h1 {
+  color: red
+}
+
+h2 {
+  color: orange;
+}
+
+h3 {
+  color: yellow;
+}
+
+h4 {
+  color: green;
+}
+
+h5 {
+  color: blue;
+}
+
+h6 {
+  color: purple;
+}
+
+.chip {
+  width: 128px;
+  height: 128px;
+  border-radius: 100%;
+  draggable: false;
+  box-shadow: 14px 7px 10px 0px rgb(0 0 0 / 0.2);
+}
+
+.Advertisement {
+  font-size: 24px;
+  text-shadow: #8ffe09 1px 0 10px;
+}

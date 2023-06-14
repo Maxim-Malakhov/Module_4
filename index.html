@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>My first HTML page</title>
+    </head>
+    <body>
+        <input type="button" value="Показать спойлер" onclick="return change(this);" />
+        <script type="text/javascript">
+        function change(elem)  {
+            if (elem.value == "Показать спойлер")
+                elem.value = "Попробуйте навести курсор на изображение внизу страницы! ;P";
+            else
+                elem.value = "Показать спойлер";
+        }
+        </script>
+        <div class="Headers">
+            <!-- Недавно начал изучать Java, они с JavaScript очень похожи! -->
+            <script>
+            for (let i = 1; i < 6+1; i++) {
+                let element = document.createElement('h'+i);
+                const text = document.createTextNode(`Заголовок ${i} уровня`);
+                element.appendChild(text);
+                document.getElementsByClassName("Headers")[0].appendChild(element);
+            }
+            </script>
+        </div>
+        <p> Lorem ipsum dlior sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dliore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dlior in reprehenderit in vliuptate velit esse cillum dliore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mlilit anim id est laborum.</p>
+        <ul>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>HTML&amp;CSS</li>
+        </ul>
+        <ol>
+            <li>Java(Script)</li>
+            <li>C#</li>
+            <li>Assembler</li>
+        </ol>
+        <center>
+            <p class="Advertisement">
+                <i>Здесь могла быть Ваша реклама!</i>
+            </p>
+            <audio id="music" src="./music.mp3" type="audio/mpeg" autoplay loop></audio>
+            <img class="chip" src="chip.gif" onmouseover="document.getElementById('music').play(); document.getElementById('music').volume=1" onmouseout="document.getElementById('music').volume=0">
+        </center>
+        <a href="https://github.com/Maxim-Malakhov">Реклама</a>
+    </body>
+</html>
