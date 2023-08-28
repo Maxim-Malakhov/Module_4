@@ -29,7 +29,7 @@ class Advertisement(models.Model):
     def updated_date(self):
         from django.utils import timezone
         if self.updated_at.date() == timezone.now().date():
-            updated_at = self.created_at.time().strftime("%H:%M:%S")
+            updated_at = self.updated_at.time().strftime("%H:%M:%S")
             return format_html(
                 '<span style="color: limegreen; font-weight: bold;">Сегодня в {}</span>', updated_at
             )

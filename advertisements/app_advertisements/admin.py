@@ -1,20 +1,18 @@
 from django.contrib import admin
 from .models import Advertisement
 
-# Register your models here.
-
 class AdvertisementAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'description', 'price', 'created_date', 'updated_date', 'auction', 'show_image']
     list_filter = ['auction', 'created_at']
     actions = ['make_auction_as_false', 'make_auction_as_true', 'set_default_image']
     fieldsets = (
         ("Общее", {
-            'fields': ('title', 'description', 'image')
-            }),
+            'fields': ('title', 'description', 'user', 'image')
+        }),
         ("Финансы", {
             'fields': ('price', 'auction'),
             'classes': ['collapse']
-            })
+        })
     )
 
     @admin.action(description="Убрать возможность торга")
